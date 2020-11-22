@@ -18,4 +18,4 @@ class Product(models.Model):
     return string
 
   def _str_(self):
-    return f"{self.title}  ({self.price_str()})"
+    return f"{self.name}  ({self.price_str()})"
