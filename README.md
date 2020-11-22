@@ -18,7 +18,7 @@ pyenv install
 ```bash
 cd DnD_DM_Sidekick_API
 pyenv shell
-python manage.py
+python manage.py runserver
 ```
 
 # Test
