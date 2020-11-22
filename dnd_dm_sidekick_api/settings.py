@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # dnd_dm_sidekick_api apps
+    'shop'
 ]
 
 MIDDLEWARE = [
