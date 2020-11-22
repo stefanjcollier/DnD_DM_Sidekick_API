@@ -11,7 +11,12 @@
 ```bash
 git clone git@github.com:stefanjcollier/DnD_DM_Sidekick_API.git
 cd DnD_DM_Sidekick_API
+
+# Install python packages
 pipenv install
+
+# Create database with tables
+python manage.py migrate
 ```
 
 # Run
