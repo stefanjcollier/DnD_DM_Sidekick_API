@@ -5,19 +5,19 @@
 
 # Requirements
 - Python 3.9
-- PyEnv
+- Pipenv
 
 # Installation
 ```bash
 git clone git@github.com:stefanjcollier/DnD_DM_Sidekick_API.git
 cd DnD_DM_Sidekick_API
-pyenv install
+pipenv install
 ```
 
 # Run
 ```bash
 cd DnD_DM_Sidekick_API
-pyenv shell
+pipenv shell
 python manage.py runserver
 ```
 
