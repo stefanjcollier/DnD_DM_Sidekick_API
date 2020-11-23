@@ -11,6 +11,7 @@ django-heroku = "*"
 whitenoise = "*"
 
 [dev-packages]
+django-cors-headers = "*"
 
 [requires]
 python_version = "3.9"
