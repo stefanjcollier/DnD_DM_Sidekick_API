@@ -8,14 +8,14 @@ class Product(models.Model):
   sp_price = models.IntegerField(verbose_name='Price in silver', default=0)
 
   def price_str(self):
-    string = ''
-    if self.gp_price is not None:
-      string += f"{self.gp_price} gp"
+    items = []
+    if self.gp_price is not None and self.gp_price > 0:
+      items.append(f"{self.gp_price} Gold")
 
-    if self.sp_price is not None:
-      string += f"{self.sp_price} sp"
+    if self.sp_price is not None and self.sp_price > 0:
+      items.append(f"{self.sp_price} Silver")
 
-    return string
+    return ', '.join(items)
 
   def _str_(self):
     return f"{self.name}  ({self.price_str()})"
