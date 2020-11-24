@@ -10,10 +10,10 @@ class Product(models.Model):
   def price_str(self):
     items = []
     if self.gp_price is not None and self.gp_price > 0:
-      items.append(f"{self.gp_price} Gold")
+      items.append(f"{self.gp_price:,} Gold")
 
     if self.sp_price is not None and self.sp_price > 0:
-      items.append(f"{self.sp_price} Silver")
+      items.append(f"{self.sp_price:,} Silver")
 
     return ', '.join(items)
 
