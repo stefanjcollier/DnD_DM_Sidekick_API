@@ -10,6 +10,9 @@ gunicorn = "*"
 django-heroku = "*"
 whitenoise = "*"
 django-cors-headers = "*"
+install = "*"
+dj-database-url = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 
