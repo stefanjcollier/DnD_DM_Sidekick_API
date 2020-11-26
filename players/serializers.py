@@ -10,11 +10,11 @@ class ReputationSerializer(serializers.ModelSerializer):
 
 
 class AdminReputationSerializer(serializers.ModelSerializer):
-  reputation_bonus = serializers.SerializerMethodField('calc_reputation_bonus')
+  price_modifier = serializers.SerializerMethodField('calc_reputation_bonus')
 
   def calc_reputation_bonus(self, reputation):
       return DiscountService.KEY_TO_BONUS[reputation.charisma_modifier]
 
   class Meta:
     model = Reputation
-    fields = ('id', 'name', 'description', 'charisma_modifier', 'reputation_bonus')
+    fields = ('id', 'name', 'description', 'charisma_modifier', 'price_modifier')
