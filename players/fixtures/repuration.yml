@@ -1,0 +1,66 @@
+- model: players.reputation
+  pk: 1
+  fields:
+    name: 'Villain/Arch Nemesis'
+    charisma_modifier: -5
+    description: ""
+- model: players.reputation
+  pk: 2
+  fields:
+    name: 'Enemy'
+    charisma_modifier: -4
+    description: ""
+- model: players.reputation
+  pk: 3
+  fields:
+    name: 'Reviled'
+    charisma_modifier: -3
+    description: ""
+- model: players.reputation
+  pk: 4
+  fields:
+    name: 'Hated'
+    charisma_modifier: -2
+    description: ""
+- model: players.reputation
+  pk: 5
+  fields:
+    name: 'Disliked'
+    charisma_modifier: -1
+    description: ""
+- model: players.reputation
+  pk: 6
+  fields:
+    name: 'Stranger'
+    charisma_modifier: 0
+    description: ""
+- model: players.reputation
+  pk: 7
+  fields:
+    name: 'Known'
+    charisma_modifier: +1
+    description: ""
+- model: players.reputation
+  pk: 8
+  fields:
+    name: 'Liked'
+    charisma_modifier: +2
+    description: ""
+- model: players.reputation
+  pk: 9
+  fields:
+    name: 'Renowned'
+    charisma_modifier: +3
+    description: ""
+- model: players.reputation
+  pk: 10
+  fields:
+    name: 'Honored'
+    charisma_modifier: +4
+    description: ""
+- model: players.reputation
+  pk: 11
+  fields:
+    name: 'Legendary'
+    charisma_modifier: +5
+    description: ""
