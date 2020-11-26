@@ -1,7 +1,7 @@
 - model: players.reputation
   pk: 1
   fields:
-    name: 'Villain/Arch Nemesis'
+    name: 'Villain'
     charisma_modifier: -5
     description: ""
 - model: players.reputation
