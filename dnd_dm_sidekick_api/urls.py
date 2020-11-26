@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 
-from shop.views import ProductView
+from shop.views import ProductView, DiscountView
 from players.views import ReputationView, AdminReputationView
 
 
@@ -26,6 +26,7 @@ router.register(r'products', ProductView, 'product')
 router.register(r'reputations', ReputationView, 'reputation')
 router.register(r'admin_reputations', AdminReputationView, 'admin_reputations')
 router.register(r'admin_reputations', AdminReputationView, 'admin_reputations')
+router.register(r'discount', DiscountView, 'discount')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
