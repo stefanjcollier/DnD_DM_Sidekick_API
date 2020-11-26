@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'rest_framework',
     # dnd_dm_sidekick_api apps
     'shop',
+    'players',
 ]
 
 MIDDLEWARE = [
