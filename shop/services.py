@@ -28,6 +28,11 @@ class DiscountService:
     :return: Double - between 0 and 2
     """
     charisma_bonus = self.KEY_TO_BONUS[self.character_charisma]
+    if charisma_bonus < -5:
+      charisma_bonus = -5
+    if charisma_bonus > 5:
+      charisma_bonus = 5
+    reputation = Reputation.objects.get(pk=self.reputation_id)
     reputation_bonus = self.KEY_TO_BONUS[reputation.charisma_modifier]
     return charisma_bonus * reputation_bonus
 
