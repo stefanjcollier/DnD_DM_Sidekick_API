@@ -22,10 +22,12 @@ class DiscountService:
      5: 0.85,
   }
 
-
   def discount(self):
+    """
+    :throws: Reputation.DoesNotExist
+    :return: Double - between 0 and 2
+    """
     charisma_bonus = self.KEY_TO_BONUS[self.character_charisma]
-    reputation = get_object_or_404(Reputation, pk=self.reputation_id)
     reputation_bonus = self.KEY_TO_BONUS[reputation.charisma_modifier]
     return charisma_bonus * reputation_bonus
 
