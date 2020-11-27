@@ -13,3 +13,5 @@ class Reputation(models.Model):
   description = models.TextField(null=True, blank=True)
   charisma_modifier = models.IntegerField(verbose_name='The equivalent charisma boost', null=False, blank=False)
 
+  class Meta:
+    ordering = ['charisma_modifier']
