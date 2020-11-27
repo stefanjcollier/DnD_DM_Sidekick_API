@@ -3,7 +3,7 @@ from django.db import models
 
 class ReputationManager(models.Manager):
   def get_default(self):
-    self.get(charisma_modifier=0)
+    return self.get(charisma_modifier=0)
 
 
 class Reputation(models.Model):
