@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from players.models import Reputation
+from players.models import Reputation, Character
 from shop.services import DiscountService
 
 
@@ -18,3 +18,17 @@ class AdminReputationSerializer(serializers.ModelSerializer):
   class Meta:
     model = Reputation
     fields = ('id', 'name', 'description', 'charisma_modifier', 'price_modifier')
+
+
+class CharacterViewSerializer(serializers.ModelSerializer):
+  reputation = ReputationSerializer()
+
+  class Meta:
+    model = Character
+    fields = ('id', 'name', 'charisma_modifier', 'reputation')
+
+
+class CharacterCreationSerializer(serializers.ModelSerializer):
+  class Meta:
+    model = Character
+    fields = ('id', 'name', 'charisma_modifier', 'reputation')
