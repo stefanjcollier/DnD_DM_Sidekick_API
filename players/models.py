@@ -15,3 +15,9 @@ class Reputation(models.Model):
 
   class Meta:
     ordering = ['charisma_modifier']
+
+
+class Character(models.Model):
+  name = models.CharField(max_length=240, null=False, blank=False)
+  charisma_modifier = models.IntegerField(null=False, blank=False)
+  reputation = models.ForeignKey(Reputation, default=Reputation.objects.get_default().id, on_delete=models.SET_DEFAULT)
