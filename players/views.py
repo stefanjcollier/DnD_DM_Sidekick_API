@@ -19,7 +19,7 @@ class AdminReputationView(viewsets.ModelViewSet):
 class CharacterView(MultiSerializerMixin, viewsets.ModelViewSet):
   serializer_classes = {
     'list': CharacterViewSerializer,
-    'show': CharacterViewSerializer,
+    'retrieve': CharacterViewSerializer,
   }
   default_serializer_class = CharacterCreationSerializer
   queryset = Character.objects.all()
