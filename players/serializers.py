@@ -25,10 +25,10 @@ class CharacterViewSerializer(serializers.ModelSerializer):
 
   class Meta:
     model = Character
-    fields = ('id', 'name', 'charisma_modifier', 'reputation')
+    fields = ('id', 'name', 'charisma_modifier', 'reputation', 'remote_image_url')
 
 
 class CharacterCreationSerializer(serializers.ModelSerializer):
   class Meta:
     model = Character
-    fields = ('id', 'name', 'charisma_modifier', 'reputation')
+    fields = ('id', 'name', 'charisma_modifier', 'reputation', 'remote_image_url')

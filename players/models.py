@@ -21,9 +21,12 @@ class Reputation(models.Model):
 
 
 class Character(models.Model):
+  DEFAULT_IMAGE_URL = 'https://cdn2.iconfinder.com/data/icons/dragonball-z-glyph/48/Cartoons__Anime_Dragonball_Artboard_1-512.png'
+
   name = models.CharField(max_length=240, null=False, blank=False)
   charisma_modifier = models.IntegerField(null=False, blank=False)
   reputation = models.ForeignKey(Reputation, default=Reputation.objects.get_default().id, on_delete=models.SET_DEFAULT)
+  remote_image_url = models.URLField(max_length=400, default=DEFAULT_IMAGE_URL)
 
   def __str__(self):
     return self.name
