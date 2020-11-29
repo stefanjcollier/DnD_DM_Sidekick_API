@@ -20,15 +20,12 @@ class AdminReputationSerializer(serializers.ModelSerializer):
     fields = ('id', 'name', 'description', 'charisma_modifier', 'price_modifier')
 
 
-class CharacterViewSerializer(serializers.ModelSerializer):
-  reputation = ReputationSerializer()
-
-  class Meta:
-    model = Character
-    fields = ('id', 'name', 'charisma_modifier', 'reputation', 'remote_image_url')
-
-
 class CharacterCreationSerializer(serializers.ModelSerializer):
   class Meta:
     model = Character
     fields = ('id', 'name', 'charisma_modifier', 'reputation', 'remote_image_url')
+
+
+class CharacterViewSerializer(CharacterCreationSerializer):
+  reputation = ReputationSerializer()
+
