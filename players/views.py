@@ -1,8 +1,9 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, mixins
 from dnd_dm_sidekick_api.library.mixins import MultiSerializerMixin
 
 from players.serializers import (ReputationSerializer, AdminReputationSerializer,
-                                 CharacterCreationSerializer, CharacterViewSerializer)
+                                 CharacterCreationSerializer, CharacterViewSerializer,
+                                 AdminCharacterSerializer)
 from players.models import Reputation, Character
 
 
@@ -23,3 +24,9 @@ class CharacterView(MultiSerializerMixin, viewsets.ModelViewSet):
   }
   default_serializer_class = CharacterCreationSerializer
   queryset = Character.objects.all()
+
+
+class AdminCharacterView(viewsets.ReadOnlyModelViewSet):
+  serializer_class = AdminCharacterSerializer
+  queryset = Character.objects.all()
+

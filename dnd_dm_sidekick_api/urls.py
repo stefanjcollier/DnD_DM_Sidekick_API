@@ -18,7 +18,7 @@ from django.urls import path, include
 from rest_framework import routers
 
 from shop.views import ProductView, DiscountView
-from players.views import ReputationView, AdminReputationView, CharacterView
+from players.views import ReputationView, AdminReputationView, CharacterView, AdminCharacterView
 
 
 router = routers.DefaultRouter()
@@ -27,6 +27,7 @@ router.register(r'reputations', ReputationView, 'reputation')
 router.register(r'admin_reputations', AdminReputationView, 'admin_reputation')
 router.register(r'discount', DiscountView, 'discount')
 router.register(r'characters', CharacterView, 'character')
+router.register(r'admin_characters', AdminCharacterView, 'character')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -29,3 +29,14 @@ class CharacterCreationSerializer(serializers.ModelSerializer):
 class CharacterViewSerializer(CharacterCreationSerializer):
   reputation = ReputationSerializer()
 
+
+class AdminCharacterSerializer(serializers.ModelSerializer):
+  reputation = ReputationSerializer()
+  discount = serializers.SerializerMethodField('calc_discount')
+
+  def calc_discount(self, instance):
+    return DiscountService.from_character(instance).discount()
+
+  class Meta:
+    model = Character
+    fields = ('id', 'name', 'charisma_modifier', 'reputation', 'remote_image_url', 'discount')
