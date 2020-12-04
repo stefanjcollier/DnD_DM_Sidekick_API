@@ -8,6 +8,10 @@ class DiscountService:
     self.character_charisma = character_charisma
     self.reputation_id = reputation_id
 
+  @staticmethod
+  def from_character(character):
+    return DiscountService(character.charisma_modifier, character.reputation_id)
+
   KEY_TO_BONUS = {
     -5: 1.1,
     -4: 1.08,
