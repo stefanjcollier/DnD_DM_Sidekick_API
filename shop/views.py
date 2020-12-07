@@ -2,8 +2,9 @@ from rest_framework import status
 from rest_framework import viewsets
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
+from dnd_dm_sidekick_api.library.mixins import MultiSerializerMixin
 
-from shop.serializers import ProductSerializer, ShopSerializer, DiscountRequestSerializer
+from shop.serializers import ProductSerializer, ShopViewSerializer, ShopUpdateSerializer, DiscountRequestSerializer
 from shop.models import Product, Shop
 from shop.services import DiscountService
 
@@ -13,8 +14,12 @@ class ProductView(viewsets.ModelViewSet):
   queryset = Product.objects.all()
 
 
-class ShopView(viewsets.ModelViewSet):
-  serializer_class = ShopSerializer
+class ShopView(MultiSerializerMixin, viewsets.ModelViewSet):
+  serializer_classes = {
+    'list': ShopViewSerializer,
+    'retrieve': ShopViewSerializer,
+  }
+  default_serializer_class = ShopUpdateSerializer
   queryset = Shop.objects.all()
 
 

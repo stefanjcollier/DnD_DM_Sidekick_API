@@ -13,9 +13,11 @@ class DiscountRequestSerializer(serializers.Serializer):
   charisma_modifier = serializers.IntegerField(min_value=-5, max_value=5)
 
 
-class ShopSerializer(serializers.ModelSerializer):
-  products = ProductSerializer(many=True)
-
+class ShopUpdateSerializer(serializers.ModelSerializer):
   class Meta:
     model = Shop
     fields = ('id', 'name', 'description', 'products')
+
+
+class ShopViewSerializer(ShopUpdateSerializer):
+  products = ProductSerializer(many=True)
