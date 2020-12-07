@@ -19,3 +19,15 @@ class Product(models.Model):
 
   def _str_(self):
     return f"{self.name}  ({self.price_str()})"
+
+  def __repr__(self):
+    return self._str_()
+
+
+class Shop(models.Model):
+  name = models.CharField(max_length=240, null=False, blank=False)
+  description = models.CharField(max_length=240, default='')
+  products = models.ManyToManyField(Product)
+
+  def _str_(self):
+    return self.name

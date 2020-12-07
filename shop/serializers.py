@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from shop.models import Product
+from shop.models import Product, Shop
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -11,3 +11,11 @@ class ProductSerializer(serializers.ModelSerializer):
 class DiscountRequestSerializer(serializers.Serializer):
   reputation_id = serializers.IntegerField(min_value=0)
   charisma_modifier = serializers.IntegerField(min_value=-5, max_value=5)
+
+
+class ShopSerializer(serializers.ModelSerializer):
+  products = ProductSerializer(many=True)
+
+  class Meta:
+    model = Shop
+    fields = ('id', 'name', 'description', 'products')

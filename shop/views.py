@@ -3,15 +3,19 @@ from rest_framework import viewsets
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 
-from shop.serializers import ProductSerializer, DiscountRequestSerializer
-from shop.models import Product
+from shop.serializers import ProductSerializer, ShopSerializer, DiscountRequestSerializer
+from shop.models import Product, Shop
 from shop.services import DiscountService
-from players.models import Reputation
 
 
 class ProductView(viewsets.ModelViewSet):
   serializer_class = ProductSerializer
   queryset = Product.objects.all()
+
+
+class ShopView(viewsets.ModelViewSet):
+  serializer_class = ShopSerializer
+  queryset = Shop.objects.all()
 
 
 class DiscountView(ViewSet):

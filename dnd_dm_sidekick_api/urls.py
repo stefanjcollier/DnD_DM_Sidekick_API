@@ -17,11 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 
-from shop.views import ProductView, DiscountView
+from shop.views import ProductView, ShopView, DiscountView
 from players.views import ReputationView, AdminReputationView, CharacterView, AdminCharacterView
 
 
 router = routers.DefaultRouter()
+router.register(r'shops', ShopView, 'shop')
 router.register(r'products', ProductView, 'product')
 router.register(r'reputations', ReputationView, 'reputation')
 router.register(r'admin_reputations', AdminReputationView, 'admin_reputation')
